@@ -1,0 +1,13 @@
+name: pytorch_env
+channels:
+  - pytorch
+  - nvidia
+dependencies:
+  - numpy
+  - python=3.10
+  - pandas
+  - matplotlib
+  - scikit-learn
+ # - pytorch
+ # - torchvision
+ # - cudatoolkit=12.1

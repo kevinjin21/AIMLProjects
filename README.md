@@ -4,8 +4,13 @@ This includes mini-projects from the UCSD Machine Learning Bootcamp, as well as 
 Focus includes ML fundamentals and skills.
 
 ## Capstone Project
-Topic:
+Topic: Predicting Sales of Pharmaceutical Drugs in Korea
 <br>Data: 
+
+## Projects
+Ghibli Text Generation
+<br>Disney+ Movie Recommendation
+<br>Korea Surgery Time Series Prediction
 
 ## Mini-Projects: 
 Data Wrangling

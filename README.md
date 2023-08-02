@@ -7,7 +7,7 @@ Aside from this capstone project, I have independently researched and developed 
 
 A brief overview of the projects and relevant topics are as follows:
 
-## Capstone Project: Predicting Sales of Pharmaceutical Drugs in South Korea
+## [Capstone Project: Predicting Sales of Pharmaceutical Drugs in South Korea] (https://github.com/kevinjin21/SpringboardProjects/tree/main/Capstone)
 <u>Problem:</u> Predict drug sales in Korea using data from various facets of South Korean life, including (but not limited to): weather, healthcare, travel, building construction, etc.
 <br>Topics: 
 * Data analysis: EDA and feature extraction; recursive feature elinimation and correlation studies

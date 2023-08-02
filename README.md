@@ -7,7 +7,7 @@ Aside from this capstone project, I have independently researched and developed 
 
 A brief overview of the projects and relevant topics are as follows:
 
-## [Capstone Project: Predicting Sales of Pharmaceutical Drugs in South Korea] (https://github.com/kevinjin21/SpringboardProjects/tree/main/Capstone)
+## [Capstone Project: Predicting Sales of Pharmaceutical Drugs in South Korea](https://github.com/kevinjin21/SpringboardProjects/tree/main/Capstone)
 <u>Problem:</u> Predict drug sales in Korea using data from various facets of South Korean life, including (but not limited to): weather, healthcare, travel, building construction, etc.
 <br>Topics: 
 * Data analysis: EDA and feature extraction; recursive feature elinimation and correlation studies
@@ -20,21 +20,21 @@ Access the model:
 <br>Full project write-up:
 
 ## Projects
-### Ghibli Text Generation
+### [Ghibli Text Generation](https://github.com/kevinjin21/SpringboardProjects/tree/main/Ghibli%20Dialogue%20Generation%20Mini-Project)
 <u>Problem:</u> Generate dialogue text in the style of renowned film studio, Studio Ghibli. 
 <br>Topics:
 * Pytorch 'long short-term memory network' (LSTM) using character chunks to predict future characters
 * Data collection and manipulation, namely reshaping and creating tensors for analysis
 * Pytorch LSTM construction and training
 
-### Disney+ Movie Recommendation
+### [Disney+ Movie Recommendation](https://github.com/kevinjin21/SpringboardProjects/tree/main/Disney%20Recommendation%20Mini-Project)
 <u>Problem:</u> Make recommendations for TV shows/movies from Disney's Disney+ streaming service based on user preferences.
 <br>Topics:
 * Data exploration and analysis: clean and analyse existing movie/TV data to be used for predictions
 * TFIDF Vectorizer and cosine similarity used to make content-based recommendations
 * Recommend related movies based on similarities in movie details and potential interests of user
 
-### Korea Surgery Time Series Prediction
+### [Korea Surgery Time Series Prediction](https://github.com/kevinjin21/SpringboardProjects/tree/main/Health%20Data%20Mini-Project)
 <u>Problem:</u> Predict cases of South Korean surgeries using time-series analysis of existing medical data.
 <br>Topics:
 * EDA of health data statistics; analyze existing trends in time series data

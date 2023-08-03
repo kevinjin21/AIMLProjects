@@ -5,7 +5,7 @@ The Japanese animation studio, Studio Ghibli, is well known for its high quality
 
 This project aims to mimic the studio's distinct dialogue style and generate new dialogue. To achieve this, a Pytorch recursive neural network (specifically an LSTM) is used. Characters from the dialogues of the above four films will be fed into the network, and they will be used to generate new similar dialogue.
 
-### [Project Overview:](https://github.com/kevinjin21/SpringboardProjects/tree/main/Ghibli%20Dialogue%20Generation%20Mini-Project)
+### Project Overview:
 <u>Problem:</u> Generate dialogue text in the style of renowned film studio, Studio Ghibli. 
 <br>Topics:
 * Pytorch 'long short-term memory network' (LSTM) using character chunks to predict future characters

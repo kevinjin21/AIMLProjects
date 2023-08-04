@@ -16,8 +16,8 @@ A brief overview of the projects and relevant topics are as follows:
 * Model Deployment: create REST API for the final model, containerize and push to Docker container for deployment
 
 Access the model: 
-<br>Initial project proposal:
-<br>Full project write-up:
+<br>[Initial project proposal](https://docs.google.com/document/d/1n_RRZgfwl0WT2p3aCEYIY8RU9nsb2mGosM1jT3U_WT0/edit)
+<br>[Full project write-up](https://docs.google.com/document/d/10khUmjzLq3PH_gnmZfJjBF86JT7S8hG7s1BtfL9th5A/edit)
 
 ## Projects
 ### [Ghibli Text Generation](https://github.com/kevinjin21/SpringboardProjects/tree/main/Ghibli%20Dialogue%20Generation%20Mini-Project)

@@ -21,6 +21,29 @@ The process can be simplified to the following workflow:
 * Metric evaluation and analysis; optimization and best-model selection
 * Model Deployment: create REST API for the final model, containerize and push to Docker container for deployment
 
+## Folder Hierarchy - A quick explanation of the files
+This project contains the entire process of finding a potential problem, collecting data, exploring said data, and modeling. Thus, it can be quite a winding journey to look through! Here is a quick explanation of the files and folders. Bolded files have the most impact/final conclusions; check those out for the most condensed view of this project.
+
+### Jupyter notebook files
+There are 3 jupyter notebooks, each serving a different purpose for the project.
+* Korea Gas and Electricity Comprehensive EDA - initial data exploration and drawn conclusions (exploring correlations and potential project problems)
+* Modeling - First look at potential models. The original project problem centered around gas and electricity generation, so this notebook explores that aspect of the data.
+* __Pharm_Modeling__ - Final modeling notebook: this modeling was done after defining the final project problem, and explores various models to find a best fit for this situation and data.
+
+### /Data
+There were many sources of data used for exploration in this project, but not all are necessarily relevant to the final models. There are a few key files to look at:
+* __Preprocessed_Data__ - processed data used for final model
+* Korea_Data_All - less cleaned version of final data; contains explored features from throughout the project. Different sheets are used for different parts of the project.
+Other data files are used for data exploration or for presentation purposes.
+
+### /Pharm_Deploy
+This folder contains deployment files for this project. It uses a pickled model to build a Flask REST API, containerizes it with Docker, and is sent to an AWS instance to be hosted. See the contained README for more information and instructions.
+
+## How to view the project
+The project is largely explained through in-depth documentation in Jupyter notebook files. The environment used for modeling and data exploration is not included in the project files as of now, due to the large scale of libraries used throughout the project.
+
+Instead, check out /Pharm_Deploy for deployment instructions, including how to set up the environment and reproduce the results. 
+
 Access the model: 
 <br>[Initial project proposal](https://docs.google.com/document/d/1n_RRZgfwl0WT2p3aCEYIY8RU9nsb2mGosM1jT3U_WT0/edit)
 <br>[Full project write-up](https://docs.google.com/document/d/10khUmjzLq3PH_gnmZfJjBF86JT7S8hG7s1BtfL9th5A/edit)

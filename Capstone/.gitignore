@@ -11,3 +11,4 @@ Pharm_Deploy/.vscode
 # test files
 Pharm_Deploy/short_test.json
 Pharm_Deploy/test.json
+Pharm_Deploy/inverse_norm.py

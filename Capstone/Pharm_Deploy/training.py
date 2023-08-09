@@ -7,8 +7,6 @@ from sklearn.ensemble import RandomForestRegressor
 from sklearn.metrics import mean_squared_error
 import pickle
 
-#from json import loads, dumps
-
 # set global seed value
 SEED_VALUE = 42
 random.seed(SEED_VALUE)
@@ -69,11 +67,6 @@ if __name__ == '__main__':
 
     # Validate model with test data
     metrics = get_model_metrics(model, X_test, y_test)
-
-    #result = X_test.to_json()
-   # parsed = loads(result)
-    #print(dumps(parsed, indent=4))
-
 
     # Save model
     pickle.dump(model, open('pharm_model.pkl', 'wb'))

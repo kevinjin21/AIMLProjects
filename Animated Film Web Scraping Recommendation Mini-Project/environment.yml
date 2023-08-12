@@ -1,0 +1,14 @@
+name: scrape
+channels:
+  - conda-forge
+  - defaults
+dependencies:
+  - beautifulsoup4
+  - matplotlib
+  - numpy
+  - pandas
+  - python=3.9
+  - requests-html
+  - scikit-learn
+  - seaborn
+  - ipykernel

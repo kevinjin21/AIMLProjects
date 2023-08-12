@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>
+        Pharmaceutical Prediction Web App
+    </title>
+    <link rel="stylesheet" href="C:\Users\Admin\Desktop\SpringboardProjects\Capstone\Pharm_Deploy\static\css\style.css">
+
+</head>
+
+<body>
+    <h1>
+        Make a Prediction!
+    </h1>
+    <p>
+        <a href="https://github.com/kevinjin21/SpringboardProjects/tree/main/Capstone">Full Project Documentation</a>
+        <br>
+        <a href="https://github.com/kevinjin21/SpringboardProjects/tree/main/Capstone/Pharm_Deploy">Deployment
+            Instructions</a> <br><br>
+        Please enter a feature value. Value should be between 0 and 1 (normalized).<br>
+    <form action="/predict" method="post">
+        Seoul Infectious Disease Type 1: <input type="number" step="0.01" min="0" max="1" placeholder="Feature 1"
+            name="feat_1" required />
+        Seoul Infectious Disease Type 3: <input type="number" step="0.01" min="0" max="1" placeholder="Feature 2"
+            name="feat_2" required />
+        Seoul Infectious Disease Type 4: <input type="number" step="0.01" min="0" max="1" placeholder="Feature 3"
+            name="feat_3" required />
+        Total Surgery Cases: <input type="number" step="0.01" min="0" max="1" placeholder="Feature 4" name="feat_4"
+            required />
+        Total Injury Cases: <input type="number" step="0.01" min="0" max="1" placeholder="Feature 5" name="feat_5"
+            required />
+        International Flight Passengers: <input type="number" step="0.01" min="0" max="1" placeholder="Feature 6"
+            name="feat_6" required />
+        Buildings Constructed of Type 'Other': <input type="number" step="0.01" min="0" max="1" placeholder="Feature 7"
+            name="feat_7" required />
+        Total Fires in Korea: <input type="number" step="0.01" min="0" max="1" placeholder="Feature 8" name="feat_8"
+            required />
+        Total Fires in Seoul: <input type="number" step="0.01" min="0" max="1" placeholder="Feature 9" name="feat_9"
+            required />
+        Mean Relative Humidity (%) in Seoul: <input type="number" step="0.01" min="0" max="1" placeholder="Feature 10"
+            name="feat_10" required /><br>
+        <input type="submit" name="form" value="Submit" />
+    </form>
+    </p><br><br>
+
+    <h3>
+        Explaining the chosen features:
+    </h3>
+    <p>
+        Seoul Infectious Disease (Seoul 1, 3, 4) - Infectious disease of various types in Seoul, Korea
+    <ul>
+        <li>SEOUL 1: BACTERIAL FOODBORNE AND DIARRHEAL DISEASE
+        </li>
+        <li>SEOUL 3: INFECTIOUS DISEASE</li>
+        <li>SEOUL 4: ANIMAL TRANSMITTED DISEASE
+        </li>
+    </ul>
+    </p>
+
+    <p>Other features:
+    <ul>
+        <li>SURGERY CASES: NUMBER OF OPERATION CASES IN KOREA</li>
+        <li>INJURY CASES: NUMBER OF ACCIDENT INJURIES IN KOREA</li>
+        <li>INTERNATIONAL FLIGHTS: NUMBER OF PASSENGERS TAKING INTERNATIONAL FLIGHTS TO KOREA</li>
+        <li>'OTHER' BUILDINGS: BUILDINGS CONSTRUCTED WITH MATERIALS CLASSIFIED AS 'OTHER'</li>
+        <li>TOTAL FIRES/FIRES IN SEOUL: TOTAL FIRES IN ALL OF KOREA AND TOTAL FIRES IN THE CAPITAL CITY OF SEOUL</li>
+        <li>MEAN RELATIVE HUMIDITY: HUMIDITY IN SEOUL, KOREA (%)</li>
+    </ul>
+    </p>
+</body>
+
+</html>

@@ -1,0 +1,7 @@
+### Capstone git ignore ###
+# log files
+.ipynb_checkpoints
+
+# saved character paths
+single-char.pth
+single-char_depth2.pth

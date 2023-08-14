@@ -1,0 +1,3 @@
+### Capstone git ignore ###
+# log files
+.ipynb_checkpoints

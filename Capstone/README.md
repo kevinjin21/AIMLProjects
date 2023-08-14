@@ -30,13 +30,13 @@ There are 3 jupyter notebooks, each serving a different purpose for the project.
 * Modeling - First look at potential models. The original project problem centered around gas and electricity generation, so this notebook explores that aspect of the data.
 * __Pharm_Modeling__ - Final modeling notebook: this modeling was done after defining the final project problem, and explores various models to find a best fit for this situation and data.
 
-### /Data
+### [/Data](https://github.com/kevinjin21/SpringboardProjects/tree/main/Capstone/Data)
 There were many sources of data used for exploration in this project, but not all are necessarily relevant to the final models. There are a few key files to look at:
 * __Preprocessed_Data__ - processed data used for final model
 * Korea_Data_All - less cleaned version of final data; contains explored features from throughout the project. Different sheets are used for different parts of the project.
 Other data files are used for data exploration or for presentation purposes.
 
-### /Pharm_Deploy
+### [/Pharm_Deploy](https://github.com/kevinjin21/SpringboardProjects/tree/main/Capstone/Pharm_Deploy)
 This folder contains deployment files for this project. It uses a pickled model to build a Flask REST API, containerizes it with Docker, and is sent to an AWS instance to be hosted. See the contained README for more information and instructions.
 
 ## How to view the project
@@ -44,7 +44,7 @@ The project is largely explained through in-depth documentation in Jupyter noteb
 
 Instead, check out /Pharm_Deploy for deployment instructions, including how to set up the environment and reproduce the results. 
 
-Access the model: 
+[Access the model](https://github.com/kevinjin21/SpringboardProjects/tree/main/Capstone/Pharm_Deploy)
 <br>[Initial project proposal](https://docs.google.com/document/d/1n_RRZgfwl0WT2p3aCEYIY8RU9nsb2mGosM1jT3U_WT0/edit)
 <br>[Full project write-up](https://docs.google.com/document/d/10khUmjzLq3PH_gnmZfJjBF86JT7S8hG7s1BtfL9th5A/edit)
 

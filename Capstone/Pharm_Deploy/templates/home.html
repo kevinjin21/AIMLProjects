@@ -5,7 +5,7 @@
     <title>
         Pharmaceutical Prediction Web App
     </title>
-    <link rel="stylesheet" href="C:\Users\Admin\Desktop\SpringboardProjects\Capstone\Pharm_Deploy\static\css\style.css">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css')}}">
 
 </head>
 
@@ -20,25 +20,25 @@
             Instructions</a> <br><br>
         Please enter a feature value. Value should be between 0 and 1 (normalized).<br>
     <form action="/predict" method="post">
-        Seoul Infectious Disease Type 1: <input type="number" step="0.01" min="0" max="1" placeholder="Feature 1"
+        Seoul Infectious Disease Type 1: <input type="number" step="0.001" min="0" max="1" placeholder="Feature 1"
             name="feat_1" required />
-        Seoul Infectious Disease Type 3: <input type="number" step="0.01" min="0" max="1" placeholder="Feature 2"
+        Seoul Infectious Disease Type 3: <input type="number" step="0.001" min="0" max="1" placeholder="Feature 2"
             name="feat_2" required />
-        Seoul Infectious Disease Type 4: <input type="number" step="0.01" min="0" max="1" placeholder="Feature 3"
+        Seoul Infectious Disease Type 4: <input type="number" step="0.001" min="0" max="1" placeholder="Feature 3"
             name="feat_3" required />
-        Total Surgery Cases: <input type="number" step="0.01" min="0" max="1" placeholder="Feature 4" name="feat_4"
+        Total Surgery Cases: <input type="number" step="0.001" min="0" max="1" placeholder="Feature 4" name="feat_4"
             required />
-        Total Injury Cases: <input type="number" step="0.01" min="0" max="1" placeholder="Feature 5" name="feat_5"
+        Total Injury Cases: <input type="number" step="0.001" min="0" max="1" placeholder="Feature 5" name="feat_5"
             required />
-        International Flight Passengers: <input type="number" step="0.01" min="0" max="1" placeholder="Feature 6"
+        International Flight Passengers: <input type="number" step="0.001" min="0" max="1" placeholder="Feature 6"
             name="feat_6" required />
-        Buildings Constructed of Type 'Other': <input type="number" step="0.01" min="0" max="1" placeholder="Feature 7"
+        Buildings Constructed of Type 'Other': <input type="number" step="0.001" min="0" max="1" placeholder="Feature 7"
             name="feat_7" required />
-        Total Fires in Korea: <input type="number" step="0.01" min="0" max="1" placeholder="Feature 8" name="feat_8"
+        Total Fires in Korea: <input type="number" step="0.001" min="0" max="1" placeholder="Feature 8" name="feat_8"
             required />
-        Total Fires in Seoul: <input type="number" step="0.01" min="0" max="1" placeholder="Feature 9" name="feat_9"
+        Total Fires in Seoul: <input type="number" step="0.001" min="0" max="1" placeholder="Feature 9" name="feat_9"
             required />
-        Mean Relative Humidity (%) in Seoul: <input type="number" step="0.01" min="0" max="1" placeholder="Feature 10"
+        Mean Relative Humidity (%) in Seoul: <input type="number" step="0.001" min="0" max="1" placeholder="Feature 10"
             name="feat_10" required /><br>
         <input type="submit" name="form" value="Submit" />
     </form>

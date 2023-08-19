@@ -34,6 +34,13 @@ Access the model:
 * TFIDF Vectorizer and cosine similarity used to make content-based recommendations
 * Recommend related movies based on similarities in movie details and potential interests of user
 
+### [Web Scraping Film Recommendation](https://github.com/kevinjin21/SpringboardProjects/tree/main/Animated%20Film%20Web%20Scraping%20Recommendation%20Mini-Project)
+<u>Problem:</u> Scrape anime film data from 2022, 2023 off of Wikipedia webiste and build a simple recommendation system using the data available.
+<br>Topics:
+* Web scraping and HTML parsing; BeautifulSoup
+* Data cleaning and analysis - focus on realistic, incomplete and inconsistent data
+* Simple recommendation system comparing content similarities (cosine) 
+
 ### [Korea Surgery Time Series Prediction](https://github.com/kevinjin21/SpringboardProjects/tree/main/Health%20Data%20Mini-Project)
 <u>Problem:</u> Predict cases of South Korean surgeries using time-series analysis of existing medical data.
 <br>Topics:

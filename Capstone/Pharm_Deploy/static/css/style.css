@@ -6,15 +6,37 @@ body {
 }
 
 strong {
-    color: yellow;
+    color: rgb(255, 252, 95);
 }
 
+
+.column {
+    float: left;
+    padding: 10px;
+}
+
+.left {
+    width: 50%;
+}
+
+.right {
+    margin-left: 80px;
+    width: 40%;
+}
+
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+
 form {
-    display: grid;
-    grid-gap: 2px;
-    width: 80%;
+    width: 100%;
     align-items: center;
-    font-size: 0.8em;
+    font-size: 1em;
+    column-count: 2;
+
 }
 
 a {
@@ -23,24 +45,32 @@ a {
 
 input[type=number] {
     border-radius: 4px;
-    width: 75px;
+    width: 120px;
     height: 20px;
     margin-bottom: 10px;
+    text-align: justify;
+    column-span: all;
 }
 
 input[type=number]:focus {
     border: 3px solid #555;
 }
 
-input[type=submit] {
+button {
     background-color: aliceblue;
     border: none;
     border-radius: 15px;
     color: rgb(20, 40, 60);
     cursor: pointer;
     padding: 8px 20px;
-    width: 15%;
-    height: 50px;
+    width: 6%;
+    height: 40px;
+    align-content: center;
+    position: absolute;
+    margin: 10px;
+    margin-left: 40%;
+    margin-top: 25px;
+    font-size: 0.8em;
 
     &:hover {
         background-color: rgb(255, 111, 111);
@@ -48,6 +78,8 @@ input[type=submit] {
         transition: all .1s ease-in-out;
     }
 }
+
+
 
 /* Chrome, Safari, Edge, Opera */
 input::-webkit-outer-spin-button,
@@ -59,4 +91,25 @@ input::-webkit-inner-spin-button {
 /* Firefox */
 input[type=number] {
     -moz-appearance: textfield;
+}
+
+
+.tooltip-text {
+    visibility: hidden;
+    position: absolute;
+    z-index: 2;
+    width: 150px;
+    color: rgb(0, 0, 0);
+    font-size: 12px;
+    background-color: #ffffff;
+    border-radius: 10px;
+    padding: 10px 15px 10px 15px;
+}
+
+.hover:hover .tooltip-text {
+    visibility: visible;
+}
+
+.hover[id='norm'] {
+    font-size: 10px;
 }

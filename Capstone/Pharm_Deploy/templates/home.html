@@ -2,72 +2,102 @@
 <html>
 
 <head>
+    <!--<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">-->
+    <link rel="stylesheet" href="../static/css/style.css">
     <title>
         Pharmaceutical Prediction Web App
     </title>
-    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css')}}">
 
 </head>
 
 <body>
     <h1>
-        Make a Prediction!
+        <strong>Make a Prediction!</strong>
     </h1>
     <p>
         <a href="https://github.com/kevinjin21/SpringboardProjects/tree/main/Capstone">Full Project Documentation</a>
         <br>
         <a href="https://github.com/kevinjin21/SpringboardProjects/tree/main/Capstone/Pharm_Deploy">Deployment
-            Instructions</a> <br><br>
-        Please enter a feature value. Value should be between 0 and 1 (normalized).<br>
-    <form action="/predict" method="post">
-        Seoul Infectious Disease Type 1: <input type="number" step="0.001" min="0" max="1" placeholder="Feature 1"
-            name="feat_1" required />
-        Seoul Infectious Disease Type 3: <input type="number" step="0.001" min="0" max="1" placeholder="Feature 2"
-            name="feat_2" required />
-        Seoul Infectious Disease Type 4: <input type="number" step="0.001" min="0" max="1" placeholder="Feature 3"
-            name="feat_3" required />
-        Total Surgery Cases: <input type="number" step="0.001" min="0" max="1" placeholder="Feature 4" name="feat_4"
-            required />
-        Total Injury Cases: <input type="number" step="0.001" min="0" max="1" placeholder="Feature 5" name="feat_5"
-            required />
-        International Flight Passengers: <input type="number" step="0.001" min="0" max="1" placeholder="Feature 6"
-            name="feat_6" required />
-        Buildings Constructed of Type 'Other': <input type="number" step="0.001" min="0" max="1" placeholder="Feature 7"
-            name="feat_7" required />
-        Total Fires in Korea: <input type="number" step="0.001" min="0" max="1" placeholder="Feature 8" name="feat_8"
-            required />
-        Total Fires in Seoul: <input type="number" step="0.001" min="0" max="1" placeholder="Feature 9" name="feat_9"
-            required />
-        Mean Relative Humidity (%) in Seoul: <input type="number" step="0.001" min="0" max="1" placeholder="Feature 10"
-            name="feat_10" required /><br>
-        <input type="submit" name="form" value="Submit" />
-    </form>
-    </p><br><br>
+            Instructions</a> <br>
+    <div class="row">
+        <div class="column left">
+            <form action="/predict" method="post" id="make_pred">
+                <div class="hover">Seoul Infectious Disease Type 1:<span class='tooltip-text' id='feat1'> Cases of
+                        bacterial
+                        foodborne and diarrheal disease in Seoul, South Korea<br> Min: 62, Max: 3251</span></div>
+                <input type="number" step="0.01" min="0" max="3251" placeholder="[62:3251]" name="feat_1"
+                    required /><br>
+                <div class="hover">Seoul Infectious Disease Type 3:<span class='tooltip-text' id='feat2'> Cases of
+                        general
+                        infectious disease in Seoul, South Korea<br> Min: 7349, Max: 13421</span></div>
+                <input type="number" step="0.01" min="0" max="13421" placeholder="[7349:13421]" name="feat_2"
+                    required /> <br>
+                <div class="hover">Seoul Infectious Disease Type 4:<span class='tooltip-text' id='feat3'> Cases of
+                        animal transmitted disease in Seoul, South Korea<br> Min: 8, Max: 132594</span></div>
+                <input type="number" step="0.01" min="0" max="132594" placeholder="[8:132594]" name="feat_3"
+                    required /><br>
+                <div class="hover">Total Surgery Cases:<span class='tooltip-text' id='feat4'> Number of Surgery Cases
+                        per Month in Korea <br> Min: 8, Max: 132594</span></div>
+                <input type="number" step="0.01" min="109884" max="199086" placeholder="[109884:199086]" name="feat_4"
+                    required /><br>
+                <div class="hover">Total Injury Cases:<span class='tooltip-text' id='feat5'> Number of Injuries due to
+                        Accidents per Month in Seoul, South Korea <br> Min: 3368, Max: 5776</span></div>
+                <input type="number" step="0.01" min="0" max="5776" placeholder="[3368:5776]" name="feat_5"
+                    required /><br>
+                <div class="hover">International Flight Passengers:<span class='tooltip-text' id='feat6'> International
+                        flights to Korea by passenger <br> Min: 2434717, Max: 8140627</span></div>
+                <input type="number" step="0.01" min="0" max="8140627" placeholder="[2434717:8140627]" name="feat_6"
+                    required /><br>
+                <div class="hover">Buildings Constructed of Type 'Other':<span class='tooltip-text' id='feat7'>
+                        Buildings constructed with materials of category 'Other' <br> Min: 15, Max: 454</span></div>
+                <input type="number" step="0.01" min="0" max="454" placeholder="[15:454]" name="feat_7" required /><br>
+                <div class="hover">Total Fires in Korea:<span class='tooltip-text' id='feat8'>
+                        Annual fire cases throughout all of South Korea <br> Min: 40103, Max: 49631</span></div>
+                <input type="number" step="0.01" min="0" max="49631" placeholder="[40103:49631]" name="feat_8"
+                    required /><br>
+                <div class="hover">Total Fires in Seoul:<span class='tooltip-text' id='feat9'>
+                        Annual fire cases in Seoul, South Korea <br> Min: 5321, Max: 6731</span></div>
+                <input type="number" step="0.01" min="0" max="6731" placeholder="[5321:6731]" name="feat_9"
+                    required /><br>
+                <div class="hover">Mean Relative Humidity (%) in Seoul:<span class='tooltip-text' id='feat10'>
+                        Mean relative humidity in Seoul, South Korea (%)<br> Min: 43, Max: 79</span></div>
+                <input type="number" step="0.01" min="0" max="79" placeholder="[43:79]" name="feat_10" required /><br>
+                <td></td>
+            </form>
+            <div class="container">
+                <div class="vertical-center">
+                    <button type="submit" form="make_pred">Submit</button>
+                </div>
+            </div>
+        </div>
 
-    <h3>
-        Explaining the chosen features:
-    </h3>
-    <p>
-        Seoul Infectious Disease (Seoul 1, 3, 4) - Infectious disease of various types in Seoul, Korea
-    <ul>
-        <li>SEOUL 1: BACTERIAL FOODBORNE AND DIARRHEAL DISEASE
-        </li>
-        <li>SEOUL 3: INFECTIOUS DISEASE</li>
-        <li>SEOUL 4: ANIMAL TRANSMITTED DISEASE
-        </li>
-    </ul>
-    </p>
-
-    <p>Other features:
-    <ul>
-        <li>SURGERY CASES: NUMBER OF OPERATION CASES IN KOREA</li>
-        <li>INJURY CASES: NUMBER OF ACCIDENT INJURIES IN KOREA</li>
-        <li>INTERNATIONAL FLIGHTS: NUMBER OF PASSENGERS TAKING INTERNATIONAL FLIGHTS TO KOREA</li>
-        <li>'OTHER' BUILDINGS: BUILDINGS CONSTRUCTED WITH MATERIALS CLASSIFIED AS 'OTHER'</li>
-        <li>TOTAL FIRES/FIRES IN SEOUL: TOTAL FIRES IN ALL OF KOREA AND TOTAL FIRES IN THE CAPITAL CITY OF SEOUL</li>
-        <li>MEAN RELATIVE HUMIDITY: HUMIDITY IN SEOUL, KOREA (%)</li>
-    </ul>
-    </p>
+        <div class="column right">
+            <h2>
+                Acceptable Feature Ranges:
+            </h2>
+            <h4>
+                This model uses <i>normalization</i> to train the model. Keep feature values within
+                the range present in the data to make meaningful
+                predictions!
+                <div class="hover" id="norm">[?]<span class='tooltip-text' id='norm-text'>
+                        Feature values will be normalized to fit within the range of 0:1 (i.e. the largest value for
+                        a feature in the dataset will be set to the value of '1').</span>
+                </div>
+            </h4>
+            <ul>
+                <li><b>SEOUL 1:</b> 62 : 3251 (cases)</li>
+                <li><b>SEOUL 3:</b> 7349 : 13421 (cases)</li>
+                <li><b>SEOUL 4:</b> 8 : 132594 (cases)</li>
+                <li><b>SURGERY CASES:</b> 109884 : 199086 (cases)</li>
+                <li><b>INJURY CASES:</b> 3368 : 5776 (cases)</li>
+                <li><b>INTERNATIONAL FLIGHTS:</b> 2434717 : 8140627 (passengers)</li>
+                <li><b>'OTHER' BUILDINGS:</b> 15 : 454 (buildings)</li>
+                <li><b>TOTAL FIRES IN KOREA:</b> 40103 : 49631 (cases)</li>
+                <li><b>TOTAL FIRES IN SEOUL:</b> 5321 : 6731 (cases)</li>
+                <li><b>MEAN RELATIVE HUMIDITY:</b>43 : 79 (%)</li>
+            </ul>
+        </div>
+    </div>
 </body>
 
 </html>

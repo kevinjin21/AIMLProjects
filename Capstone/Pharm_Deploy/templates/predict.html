@@ -5,14 +5,14 @@
     <title>
         Pharmaceutical Prediction Web App
     </title>
-    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='/css/style.css')}}">
 
 </head>
 
 <body>
-    <h1>
+    <h2>
         The model predicts <strong>{{ pred }}</strong> total pharmaceutical sales based on input data.
-    </h1>
+    </h2>
 
     <a href="/">Make another prediction</a>
 </body>

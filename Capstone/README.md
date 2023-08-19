@@ -44,7 +44,7 @@ The project is largely explained through in-depth documentation in Jupyter noteb
 
 Instead, check out /Pharm_Deploy for deployment instructions, including how to set up the environment and reproduce the results. 
 
-[Access the model](https://github.com/kevinjin21/SpringboardProjects/tree/main/Capstone/Pharm_Deploy)
+[Access the model and AWS deployment](https://github.com/kevinjin21/SpringboardProjects/tree/main/Capstone/Pharm_Deploy)
 <br>[Initial project proposal](https://docs.google.com/document/d/1n_RRZgfwl0WT2p3aCEYIY8RU9nsb2mGosM1jT3U_WT0/edit)
 <br>[Full project write-up](https://docs.google.com/document/d/10khUmjzLq3PH_gnmZfJjBF86JT7S8hG7s1BtfL9th5A/edit)
 

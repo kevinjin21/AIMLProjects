@@ -5,6 +5,12 @@ Through extensive data exploration and model evaluation, a final set of (10) fea
 
 It is important to note that as of now, the data is pretrained and processed for deployment, meaning that currently, optimizing modeling using a different model or set of features is not possible. However, retraining the used model can be done by using a different set of data. Furthermore, the deployed web application will currently make predictions based on the aformentioned 10 features, but can be further developed to be more flexible in future iterations.
 
+## Deployment Usage
+<center>
+<video src="../Data/app_video.mp4" controls="controls" style="max-width: 730px;"></video>
+</center>
+A brief look into the final deployment product, how to use it for a prediction, and displayed results. Feature values are constrained as per the acceptable feature ranges; please stay within recommended ranges for an accurate prediction. Ranges are based on training data values used for normalization and can be fitted to new data.
+
 ## File Explanation
 Deployment Files:
 * Dockerfile - contains docker image requirements

@@ -8,7 +8,7 @@ Following the tumultuous age of COVID-19 and the resulting restructuring and res
 This project aims to take a deeper look at some potential predictors for the total sales of pharmaceutical drugs in South Korea, analyzing data from different sectors of Korean society. The goal is therefore to find connections between these varying sources of data and use them to accurately predict Korean drug sales. 
 
 <p align="center">
-  <img src="Data/app_display.gif" alt="animated" height='1000px'/>
+  <img src="Data/app_display.gif" alt="animated" height='500px'/>
 </p>
 
 **Note**: The final model will use a REST API and Docker container to be deployed to the web. The model used in this step will be pre-trained based on the 'Preprocessed_Data' available in the file. This means that currently additional training is not possible through the web, but can instead be added in a later implementation. 

@@ -22,11 +22,6 @@ def load_weights():
 
 
 def inverse_norm(result):
-    '''with open('norm_weights.pkl', 'rb') as f:
-        data = pickle.load(f)
-        ceil = data[0]
-        floor = data[1]
-        return result*(ceil-floor) + floor'''
     ceil = weights[0]
     floor = weights[1]
     return result*(ceil-floor) + floor
@@ -54,10 +49,12 @@ def get_prediction():
         for i in range(10):
             features.append(float(request.form[f"feat_{i+1}"]))
         data = np.array(features)
-        data = normalize(data)
+        tested = data.tolist()  # to return tested feature values if desired
+        tested = [round(elem) for elem in tested]
+        normalize(data)
         prediction = model.predict(data.reshape(1, -1))
         prediction = inverse_norm(prediction)
-        return render_template('predict.html', pred=round(prediction[0], 3))
+        return render_template('predict.html', pred=round(prediction[0], 3), test_data=tested)
 
 
 if __name__ == '__main__':

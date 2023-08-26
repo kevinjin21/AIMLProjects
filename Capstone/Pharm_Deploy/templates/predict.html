@@ -5,16 +5,35 @@
     <title>
         Pharmaceutical Prediction Web App
     </title>
-    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='/css/style.css')}}">
+    <link rel="stylesheet" href="../static/css/style.css">
 
 </head>
 
 <body>
-    <h2>
-        The model predicts <strong>{{ pred }}</strong> total pharmaceutical sales based on input data.
-    </h2>
+    <div class="predict">
+        <h2>
+            The model predicts <strong>{{ pred }}</strong> total pharmaceutical sales based on input data.
+        </h2>
 
-    <a href="/">Make another prediction</a>
+        <h3>
+            Used feature values:
+        </h3>
+        <ul>
+            <li>SEOUL 1: <b>{{ test_data[0] }}</b></li>
+            <li>SEOUL 3: <b>{{ test_data[1] }}</b></li>
+            <li>SEOUL 4: <b>{{ test_data[2] }}</b></li>
+            <li>SURGERY CASES: <b>{{ test_data[3] }}</b></li>
+            <li>INJURY CASES: <b>{{ test_data[4] }}</b></li>
+            <li>INTERNATIONAL FLIGHTS: <b>{{ test_data[5] }}</b></li>
+            <li>'OTHER' BUILDINGS: <b>{{ test_data[6] }}</b></li>
+            <li>TOTAL FIRES IN KOREA: <b>{{ test_data[7] }}</b></li>
+            <li>TOTAL FIRES IN SEOUL: <b>{{ test_data[8] }}</b></li>
+            <li>MEAN RELATIVE HUMIDITY: <b>{{ test_data[9] }}</b></li>
+        </ul>
+
+        <br>
+        <a href="/">Make another prediction</a>
+    </div>
 </body>
 
 </html>

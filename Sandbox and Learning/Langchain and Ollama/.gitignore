@@ -1,0 +1,8 @@
+### Email Invoice Analysis git ignore ###
+# log files
+.ipynb_checkpoints
+
+# IDE files
+
+# config
+.env

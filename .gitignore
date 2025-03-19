@@ -1,0 +1,11 @@
+# log files
+.ipynb_checkpoints
+
+# IDE files
+.idea
+
+# config
+.env
+
+# sandbox projects
+Email*Invoice*Analysis/

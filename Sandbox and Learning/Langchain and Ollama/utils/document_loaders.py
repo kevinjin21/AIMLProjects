@@ -2,7 +2,7 @@ from dotenv import load_dotenv
 import re
 import os
 import glob
-from typing import List, Union, Optional
+from typing import List, Union, Optional, Tuple
 from abc import ABC, abstractmethod
 
 from langchain_community.document_loaders import (
@@ -15,9 +15,15 @@ from langchain_community.document_loaders import (
 )
 from langchain_community.document_loaders.youtube import TranscriptFormat
 from langchain_text_splitters import RecursiveCharacterTextSplitter
-from langchain_ollama import ChatOllama
+from langchain_ollama import ChatOllama, OllamaEmbeddings
+from langchain_community.vectorstores import FAISS
+from langchain_community.docstore.in_memory import InMemoryDocstore
+from langchain_core.prompts import ChatPromptTemplate
+from langchain_core.output_parsers import StrOutputParser
+from langchain_core.runnables import RunnablePassthrough
 
 load_dotenv()
+base_url = 'http://localhost:11434'
 
 class BaseDocumentLoader(ABC):
     """Abstract base class for all document loaders"""
@@ -224,19 +230,48 @@ class DocumentManager:
     """Facade pattern that simplifies document loading by providing a single interface to handle multiple document types (PDF, Word, Excel, etc.) and their processing. 
     Acts as a high-level interface that coordinates between different document loaders and handles common operations like directory scanning and text chunking."""
     
-    def __init__(self, base_url: str = 'http://localhost:11434', model: str = 'llama3.2'):
+    def __init__(self):
         self.web_loader = WebPageLoader()
         self.pdf_loader = PDFLoader()
         self.word_loader = WordLoader()
         self.excel_loader = ExcelLoader()
         self.powerpoint_loader = PowerPointLoader()
-        self.youtube_loader = YouTubeLoader()
-        self.llm = ChatOllama(base_url=base_url, model=model)
+        self.llm = ChatOllama(base_url=base_url, model='llama3.2') # default llm
+        self.docs = [] # initialize as empty list
+        self.context = ''
+        self.vector_store_path = None
+        self.embedding = OllamaEmbeddings(base_url=base_url, model='nomic-embed-text')
+        self.rag_prompt = """
+        You are an assistant for question-answering tasks. Use the following pieces of retrieved context to answer the question. 
+        Do not answer based on assumptions, use the context only.
+        Keep your answer concise and neatly structured. Use bullet points if necessary.
+        Make sure your answer is relevant to the question and it is answered from the context only.
+        ### Question: 
+        {question} 
 
-    def load_directory(self, directory_path: str) -> List:
-        """Load all supported documents from a directory"""
-        all_files = glob.glob(os.path.join(directory_path, '*.*'))
+        ### Context: 
+        {context} 
+
+        ### Answer:
+        """
+
+    def load_directory(self, directory_path: Union[str, List[str]]) -> Tuple[List, str]:
+        """Load all supported documents from directory path or list of file paths
+    
+        Args:
+            directory_path: Either a directory path string or list of file paths
+            
+        Returns:
+            Tuple containing list of loaded documents and formatted context string
+        """
         docs = []
+        context = ''
+
+        # Handle directory path string vs list of files
+        if isinstance(directory_path, str):
+            all_files = glob.glob(directory_path)
+        else:
+            all_files = directory_path
         
         # Group files by type
         pdfs = [f for f in all_files if f.endswith('.pdf')]
@@ -246,34 +281,161 @@ class DocumentManager:
         
         # Load each type
         if pdfs:
-            docs.extend(self.pdf_loader.load(pdfs))
+            files = self.pdf_loader.load(pdfs)
+            docs.extend(files)
+            context += self.pdf_loader.format_docs(files)
         if word_docs:
-            docs.extend(self.word_loader.load(word_docs))
+            files = self.word_loader.load(word_docs)
+            docs.extend(files)
+            context += self.word_loader.format_docs(files)
         if excel_files:
-            docs.extend(self.excel_loader.load(excel_files))
+            files = self.excel_loader.load(excel_files)
+            docs.extend(files)
+            context += self.excel_loader.format_docs(files)
         if powerpoint_files:
-            docs.extend(self.powerpoint_loader.load(powerpoint_files))
-            
-        return docs
+            files = self.powerpoint_loader.load(powerpoint_files)
+            docs.extend(files)
+            context += self.powerpoint_loader.format_docs(files)
 
-    def process_documents(self, docs: List, chunk_size: int = 1000, 
+        # Add to current list of documents
+        if docs:
+            self.docs.extend(docs)
+
+        self.context += context
+            
+        return docs, context
+    
+    def load_llm(self, llm):
+        """Change default llm with user-loaded llm"""
+        self.llm = llm
+        return self.llm
+    
+    def load_embedding(self, embedding):
+        """Change default embeddings to user-defined embedding"""
+        self.embedding = embedding
+        return self.embedding
+
+    def chunk_documents(self, docs: Optional[List] = None, chunk_size: int = 1000, 
                          chunk_overlap: int = 100) -> List[str]:
-        """Process documents into chunks"""
+        """Process documents into chunks. For use on list of documents.
+    
+        Args:
+            docs: Optional list of documents. If None, uses self.docs
+            chunk_size: Size of each chunk in characters
+            chunk_overlap: Number of characters to overlap between chunks
+            
+        Returns:
+            List of document chunks
+        """
         text_splitter = RecursiveCharacterTextSplitter(
             chunk_size=chunk_size,
             chunk_overlap=chunk_overlap
         )
-        return text_splitter.split_documents(docs)
+        if docs:
+            return text_splitter.split_documents(docs)
+        else:
+            return text_splitter.split_documents(self.docs)
+        
+    def chunk_text(self, context: Optional[str] = None, chunk_size: int = 1000, chunk_overlap: int = 100) -> List[str]:
+        """Process text into chunks. For use on context in raw string form.
+
+        Args:
+            context: Optional string to chunk. If None, uses self.context
+            chunk_size: Size of each chunk in characters
+            chunk_overlap: Number of characters to overlap between chunks
+            
+        Returns:
+            List of text chunks
+        """
+        if context is None:
+            context = self.context
+
+        text_splitter = RecursiveCharacterTextSplitter(
+            chunk_size=chunk_size,
+            chunk_overlap=chunk_overlap
+        )
+        
+        chunks = text_splitter.split_text(context)
+        return chunks
+    
+    def create_vector_store(self, chunks, path) -> None:
+        """
+        Create vector store from chunked documents. 
+        This does NOT need to be called every time: vectorized documents can be referenced later if there are no file changes.
+
+        Args:
+        chunks: Either List[Document] objects or List[str] text chunks
+        path: Path to save the FAISS index
+        
+        Returns:
+            None
+        """
+        # Check if chunks are strings or documents
+        if chunks and isinstance(chunks[0], str):
+            vector_store = FAISS.from_texts(
+                texts=chunks,
+                embedding=self.embedding,
+                docstore=InMemoryDocstore(),
+                index_to_docstore_id={}
+            )
+        else:
+            vector_store = FAISS.from_documents(
+                documents=chunks,
+                embedding=self.embedding,
+                docstore=InMemoryDocstore(),
+                index_to_docstore_id={}
+            )
+
+        self.vector_store_path = path
+        vector_store.save_local(path)
+
+    @staticmethod
+    def format_docs(docs) -> str:
+        # to be used as runnable for llm; formats retrieved context documents
+        return '\n\n'.join([x.page_content for x in docs])
+    
+    def retrieve(self, question, prompt: Optional[str] = None, path: Optional[str] = None):
+        """
+        Load vector store using filepath and embeddings.
+        Make sure create_vector_store has been called or a vector store path has been provided.
+        Set retriever settings, question, and prompt to retrieve from vector store.
+        """
+        if path is None:
+            if self.vector_store_path is None:
+                raise ValueError("No vector store path provided") # need to initialize vector store before using retrieve
+            path = self.vector_store_path
+
+        vector_store = FAISS.load_local(path, self.embedding, allow_dangerous_deserialization=True)
+
+        retriever = vector_store.as_retriever(
+        search_type="similarity",
+        search_kwargs={"k": 3}
+        )
+
+        # Allow user to define prompt in retrieve() call; otherwise will use default prompt.
+        if prompt is None:
+            prompt = self.rag_prompt
+
+        prompt = ChatPromptTemplate.from_template(prompt)
+
+        # Create chain with retriever, llm, and prompt. Format the docs to be used as context for llm
+        rag_chain = (
+        {"context": retriever | self.format_docs, "question": RunnablePassthrough()}
+        | prompt | self.llm | StrOutputParser()
+        )
+
+        response = rag_chain.invoke(question)
+        return response
 
 # Usage example:
 if __name__ == "__main__":
-    manager = DocumentManager()
+    ppt_loader = PowerPointLoader()
     
     # Load from directory
-    docs = manager.load_directory("path/to/documents")
+    docs = ppt_loader.load("path/to/documents")
     
-    # Process documents
-    chunks = manager.process_documents(docs)
+    # Process documents and save as string
+    docs = ppt_loader.format_docs(docs)
     
     print(f"Loaded {len(docs)} documents")
-    print(f"Created {len(chunks)} chunks")
+    # Can then proceed to chunk strings or feed to LLM.

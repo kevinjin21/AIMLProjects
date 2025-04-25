@@ -1,0 +1,9 @@
+# log files
+.ipynb_checkpoints
+
+# IDE files
+__pycache__/
+*.pyc
+
+# config
+.env

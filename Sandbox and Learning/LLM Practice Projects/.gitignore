@@ -7,3 +7,7 @@ __pycache__/
 
 # config
 .env
+
+# resume data
+/resume_parser/sample_resumes
+/resume_parser/parsed_resumes

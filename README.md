@@ -1,9 +1,11 @@
-# Springboard Projects
-### A collection of projects developed while enrolled in the UCSD ML bootcamp. Projects explore a variety of ML topics in real-world application frameworks.
+# AI and ML Projects
+### A collection of personal projects developed while working at Apache Corporation and during my UCSD ML Bootcamp. Projects explore a variety of AI and ML topics in real-world application frameworks.
+
+Apache Corporation is an independent energy company headquartered in Houston, Texas. It is primarily engaged in the exploration, development, and production of natural gas, crude oil, and natural gas liquids in the United States, Egypt, and offshore the UK. My work with Apache centered around power and energy forecasting (focusing on electricity usage, optimization, etc.), and in building AI tools to leverage LLMs in our workflow. 
 
 The UCSD Machine Learning Course is a 6 month program intended to be used as a 'crash course' for learning machine learning. During this course, students are required to create a *capstone project*, which takes real-world data, and formulates a problem to solve or predict using machine learning algorithms and methods.
 
-Aside from this capstone project, I have independently researched and developed a few other "passion projects", fusing topics I am personally interested in with techniques learned throughout the course. These 'mini-projects' vary in length and depth, but nevertheless each explore unique aspects of machine learning and data analysis.
+Aside from projects developed in association with these organizations, I have independently researched and developed a few other "passion projects", fusing topics I am personally interested in with techniques learned throughout these experiences. These 'mini-projects' vary in length and depth, but nevertheless each explore unique aspects of AI, machine learning, and data analysis.
 
 A brief overview of the projects and relevant topics are as follows:
 

@@ -1,0 +1,16 @@
+# pdf invoices
+/invoices
+/invoice_archive
+
+# logs
+/logs
+
+# final visualization (contains sensitive info)
+*.pbix
+
+# sqlite database
+finance_data.db
+
+# IDE files
+__pycache__/
+*.pyc

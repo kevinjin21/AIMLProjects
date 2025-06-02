@@ -1,0 +1,8 @@
+python==3.10.*
+numpy
+pandas
+jupyter
+tabula-py
+pypdf
+langchain-core
+langchain-ollama

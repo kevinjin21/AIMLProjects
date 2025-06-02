@@ -1,5 +1,5 @@
-# AI and ML Projects
-### A collection of personal projects developed while working at Apache Corporation and during my UCSD ML Bootcamp. Projects explore a variety of AI and ML topics in real-world application frameworks.
+# My AI and ML Projects
+### A collection of personal projects developed using skills built while working at Apache Corporation and during my UCSD ML Bootcamp. Projects explore a variety of AI and ML topics in real-world application frameworks.
 
 Apache Corporation is an independent energy company headquartered in Houston, Texas. It is primarily engaged in the exploration, development, and production of natural gas, crude oil, and natural gas liquids in the United States, Egypt, and offshore the UK. My work with Apache centered around power and energy forecasting (focusing on electricity usage, optimization, etc.), and in building AI tools to leverage LLMs in our workflow. 
 
@@ -22,6 +22,13 @@ A brief overview of the projects and relevant topics are as follows:
 <br>[Full project write-up](https://docs.google.com/document/d/10khUmjzLq3PH_gnmZfJjBF86JT7S8hG7s1BtfL9th5A/edit)
 
 ## Projects
+### [Finance Invoice Parser](https://github.com/kevinjin21/AIMLProjects/tree/develop/Finance%20Invoice%20Parser)
+<u>Problem:</u> Automatically process financial statements (banking and credit card) to extract transaction details and categorize spending for better financial management.
+<br>Topics:
+* PDF data extraction and processing using PyPDF and PyMuPDF libraries; data storage and management via Pandas and SQLite
+* AI-powered transaction categorization using LangChain and local LLM (Ollama) integration
+* PowerBI visualization for more user-friendly finance dashboard
+
 ### [Ghibli Text Generation](https://github.com/kevinjin21/SpringboardProjects/tree/main/Ghibli%20Dialogue%20Generation%20Mini-Project)
 <u>Problem:</u> Generate dialogue text in the style of renowned film studio, Studio Ghibli. 
 <br>Topics:

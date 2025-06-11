@@ -268,12 +268,12 @@ def save_to_markdown(content, filename, url, directory='generations'):
     return file_path
 
 def main():
-    # TODO CLEANUP MAIN, ADD BETTER WAY TO INPUT YOUTUBE URL, USER ELEMNTS
-    # TODO CLEANUP CODE BEFORE ADDING TO GITHUB REPO
-    # todo add images to readme.md
+    # Use your own url or transcript here:
     url='https://www.youtube.com/watch?v=0XDiWYFGGqY'
     transcripts = ['transcripts/dry_humor_example.txt']
-    pre_loaded_format = 'formats/.*'
+
+    # Saved formats can be loaded as well to save compute. 
+    pre_loaded_format = 'formats/format_guide_0XDiWYFGGqY.md'
 
     if "ANTHROPIC_API_KEY" not in os.environ:
         os.environ["ANTHROPIC_API_KEY"] = getpass.getpass("Enter your Anthropic API key: ")
@@ -320,8 +320,7 @@ def main():
         format_guide = extract_story_format(claude, url, transcripts)
 
         # Optionally save the format guide for future use
-        #todo save_format = input("Would you like to save the format guide for future use? (y/n): ").lower().strip() == 'y'
-        save_format = True
+        save_format = input("Would you like to save the format guide for future use? (y/n): ").lower().strip() == 'y'
         if save_format:
             # Generate a meaningful filename based on the URL or video ID
             if isinstance(url, str):
@@ -341,10 +340,8 @@ def main():
     timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
     filename = f"generated_story_{timestamp}"
     
-    # Save both the story and the format guide
-    save_to_markdown(new_story, filename, url)
-    #save_to_markdown(format_guide, f"generations/format_guide_{timestamp}")
-    #todo add a way to save title into markdown or have llm generate title as well
+    # Save the generated story
+    save_to_markdown(new_story, filename, url, directory='generations')
     
 if __name__ == "__main__":
     main()

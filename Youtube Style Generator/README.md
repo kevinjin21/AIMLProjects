@@ -8,7 +8,7 @@
 
 Creating content that matches a specific YouTube creator's style can be challenging and time-consuming. This project provides an automated solution for analyzing, extracting, and mimicking the writing and storytelling style of any YouTube content creator through their video transcripts.
 
-See example generations <u>[here](https://github.com/kevinjin21/AIMLProjects/tree/main/Youtube%20Style%20Generator)</u>
+See example generations <u>[here](https://github.com/kevinjin21/AIMLProjects/tree/main/Youtube%20Style%20Generator/generations)</u>
 
 ## 📌 Project Overview
 **Goal:** Automatically analyze YouTube video transcripts to extract writing style patterns and generate new content in the same style. Allow the user to add user-specified elements (character, plot, etc.) to the new generation.

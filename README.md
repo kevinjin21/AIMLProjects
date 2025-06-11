@@ -22,7 +22,7 @@ A brief overview of the projects and relevant topics are as follows:
 <br>[Full project write-up](https://docs.google.com/document/d/10khUmjzLq3PH_gnmZfJjBF86JT7S8hG7s1BtfL9th5A/edit)
 
 ## Projects
-### [Finance Invoice Parser](https://github.com/kevinjin21/AIMLProjects/tree/develop/Finance%20Invoice%20Parser)
+### [Finance Invoice Parser](https://github.com/kevinjin21/AIMLProjects/tree/main/Finance%20Invoice%20Parser)
 <u>Problem:</u> Automatically process financial statements (banking and credit card) to extract transaction details and categorize spending for better financial management.
 <br>Topics:
 * PDF data extraction and processing using PyPDF and PyMuPDF libraries; data storage and management via Pandas and SQLite

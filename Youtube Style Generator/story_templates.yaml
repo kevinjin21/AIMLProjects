@@ -1,0 +1,31 @@
+dry_humor_office:
+  description: Office setting with dry humor
+  elements: |
+    Characters:
+    - Dave: A middle-aged IT specialist who speaks exclusively in technical jargon no one understands
+    - Janet: An efficiency-obsessed office manager with 37 different organizational systems
+
+    Setting:
+    - A corporate office where the printer has been "temporarily out of order" for three years
+
+    Theme:
+    - The heroic struggle against mundane workplace inconveniences
+
+    Length:
+    - 1000 to 1500 words
+
+sci_fi_exploration:
+  description: Scientific exploration with supernatural elements
+  elements: |
+    Characters:
+    - Maya: A botanist who can communicate with plants
+    - Dr. Elias: A skeptical scientist studying unusual phenomena
+
+    Setting:
+    - A remote research station in the Amazon rainforest
+
+    Theme:
+    - The boundary between science and the unexplainable
+
+    Length:
+    - Less than 1000 words

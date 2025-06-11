@@ -1,0 +1,6 @@
+python==3.12.*
+langchain
+langchain-community
+langchain-anthropic
+python-dotenv
+youtube-transcript-api

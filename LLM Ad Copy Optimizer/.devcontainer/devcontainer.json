@@ -1,0 +1,28 @@
+{
+  "name": "llm_ad_copy_optimizer",
+  "build": {
+    "dockerfile": "../Dockerfile"
+  },
+
+  // mount the local work directory to the container work directory
+  "workspaceMount": "type=bind,source=${localWorkspaceFolder},target=/app",
+  "workspaceFolder": "/app",
+  "forwardPorts": [8501],
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "ms-python.python",
+        "ms-python.vscode-pylance",
+        "GitHub.copilot",
+        "GitHub.copilot-chat"
+      ],
+      "settings": {
+        "python.defaultInterpreterPath": "/usr/local/bin/python",
+        "[python]": {
+          "editor.defaultFormatter": "ms-python.black-formatter"
+        },
+        "editor.formatOnSave": true
+      }
+    }
+  }
+}

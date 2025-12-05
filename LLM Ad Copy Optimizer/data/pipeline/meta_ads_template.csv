@@ -1,0 +1,11 @@
+ad_id,campaign_id,headline_text,body_text,call_to_action,platform,placement,ad_format,category,impressions,clicks,conversions,spend
+meta_ad_001,,Save 20% on Running Shoes Today,Limited-time offer on our best-selling running shoes. Free shipping on all orders.,Shop Now,facebook,,image,ecommerce,58210,913,124,834.71
+meta_ad_002,,Organize Your Work in One Place,Our project management platform helps remote teams move faster with less chaos.,Start Free Trial,instagram,,image,saas,42135,214,31,289.5
+meta_ad_003,,Master Data Analytics in 8 Weeks,Join our intensive online bootcamp and build a portfolio with real-world projects.,Apply Now,facebook,,video,education,30112,452,46,512.39
+meta_ad_004,,Fresh Deals on Home Office Gear,"Upgrade your desk setup with ergonomic chairs, standing desks, and accessories.",Shop Deals,facebook,,image,ecommerce,76544,1023,138,954.8
+meta_ad_005,,The CRM Built for Small Teams,"Track leads, automate follow-ups, and close more deals without complexity.",Book Demo,instagram,,video,saas,38950,198,22,314.27
+meta_ad_006,,Launch Your First Online Store,"Everything you need to sell products, accept payments, and ship worldwide.",Get Started,facebook,,image,ecommerce,61200,735,97,780.1
+meta_ad_007,,Level Up Your Python Skills,Hands-on course with weekly projects and 1:1 mentor feedback.,Enroll Today,instagram,,image,education,27640,389,41,398.64
+meta_ad_008,,Automate Your Reporting in Minutes,Connect your data sources and ship dashboards your team actually uses.,See It in Action,facebook,,video,saas,45510,265,29,352.18
+meta_ad_009,,Learn UX Design From Experts,"Portfolio-focused curriculum, live feedback, and community support.",Join the Program,facebook,,image,education,33289,402,37,427.55
+meta_ad_010,,Exclusive Deals on Fitness Gear,"Save on weights, mats, and accessories for your home workouts.",Shop Collection,instagram,,image,ecommerce,59330,856,102,821.09

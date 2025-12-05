@@ -22,6 +22,17 @@ Aside from projects developed in association with these organizations, I have in
 <br>[Full project write-up](https://docs.google.com/document/d/10khUmjzLq3PH_gnmZfJjBF86JT7S8hG7s1BtfL9th5A/edit)
 
 ## Projects
+### [🧠 LLM Ad Copy Optimizer](https://github.com/kevinjin21/AIMLProjects/tree/main/LLM%20Ad%20Copy%20Optimizer)
+<u>Problem:</u> Automatically analyze and optimize digital ad copy to maximize click-through rates using machine learning and large language models.
+<br>Topics:
+* Data enrichment and feature engineering for ad performance metrics (30+ text, categorical, and performance features)
+* Predictive modeling with regression and ensemble methods to estimate CTR
+* LLM-powered ad rewriting via strategy insights from engineered and analyzed features (Claude or Ollama)
+* ML-guided optimization; LLM prompts include model insights and feature importance when generating improved ad copies
+* Evaluation pipeline comparing CTR for analysis and future improvement
+* Interactive Streamlit app dashboard for visualizing optimization results
+* Containerized deployment for scalable inference and integration
+
 ### [✍️ YouTube Style Generator](https://github.com/kevinjin21/AIMLProjects/tree/main/Youtube%20Style%20Generator)
 <u>Problem:</u> Create original content that mimics the writing style and format of YouTube creators by analyzing their video transcripts and generating new stories in their distinctive style. 
 <br>Topics:

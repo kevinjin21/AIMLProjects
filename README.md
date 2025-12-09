@@ -22,6 +22,15 @@ Aside from projects developed in association with these organizations, I have in
 <br>[Full project write-up](https://docs.google.com/document/d/10khUmjzLq3PH_gnmZfJjBF86JT7S8hG7s1BtfL9th5A/edit)
 
 ## Projects
+### [🤖 SymbolicPlan: LLM Agent for Robot Task Planning](https://github.com/kevinjin21/AIMLProjects/tree/main/SymbolicPlan)
+<u>Problem:</u> Translate high-level goals into structured robot action sequences by combining LLM reasoning with symbolic execution for reliable embodied AI task planning.
+<br>Topics:
+* Agentic reasoning with LLM-driven decision making (Claude or Ollama) for flexible, human-interpretable plans
+* Symbolic action primitives for deterministic execution (move, pick, place, inspect, container manipulation)
+* Goal-based task completion with state validation and natural language world representation
+* Multi-scenario evaluation pipeline with completion metrics and efficiency analysis
+* Clean architecture separating agent layer (LLM client, prompting, planning) from environment layer (world state, actions)
+
 ### [🧠 LLM Ad Copy Optimizer](https://github.com/kevinjin21/AIMLProjects/tree/main/LLM%20Ad%20Copy%20Optimizer)
 <u>Problem:</u> Automatically analyze and optimize digital ad copy to maximize click-through rates using machine learning and large language models.
 <br>Topics:

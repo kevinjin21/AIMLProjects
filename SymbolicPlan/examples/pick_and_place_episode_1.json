@@ -1,0 +1,43 @@
+{
+  "scenario": "Pick And Place Box Episode 1",
+  "task_description": "Place the box from the table onto the shelf.",
+  "initial_state": "Robot is at floor.\nRobot's hand is empty.\nbox is on table.\nbook is on floor.\nGoal: Place the box from the table onto the shelf.\nSteps taken: 0/10",
+  "success": true,
+  "total_steps": 4,
+  "final_state": "Robot is at shelf.\nRobot's hand is empty.\nbox is on shelf.\nbook is on floor.\nGoal: Place the box from the table onto the shelf.\nSteps taken: 4/10",
+  "steps": [
+    {
+      "step_number": 1,
+      "action": "MOVE_TO(TABLE)",
+      "llm_raw_output": "ACTION: MOVE_TO(table)",
+      "result": "Moved to table",
+      "state_after": "Robot is at table.\nRobot's hand is empty.\nbox is on table.\nbook is on floor.\nGoal: Place the box from the table onto the shelf.\nSteps taken: 1/10",
+      "step_count": 1
+    },
+    {
+      "step_number": 2,
+      "action": "PICK(BOX)",
+      "llm_raw_output": "ACTION: PICK(box)",
+      "result": "Picked up box",
+      "state_after": "Robot is at table.\nRobot is holding box.\nbook is on floor.\nGoal: Place the box from the table onto the shelf.\nSteps taken: 2/10",
+      "step_count": 2
+    },
+    {
+      "step_number": 3,
+      "action": "MOVE_TO(SHELF)",
+      "llm_raw_output": "ACTION: MOVE_TO(shelf)",
+      "result": "Moved to shelf",
+      "state_after": "Robot is at shelf.\nRobot is holding box.\nbook is on floor.\nGoal: Place the box from the table onto the shelf.\nSteps taken: 3/10",
+      "step_count": 3
+    },
+    {
+      "step_number": 4,
+      "action": "PLACE(SHELF)",
+      "llm_raw_output": "ACTION: PLACE(shelf)",
+      "result": "Placed box on shelf",
+      "state_after": "Robot is at shelf.\nRobot's hand is empty.\nbox is on shelf.\nbook is on floor.\nGoal: Place the box from the table onto the shelf.\nSteps taken: 4/10",
+      "step_count": 4
+    }
+  ],
+  "timestamp": "2025-12-09T11:39:41.275729"
+}

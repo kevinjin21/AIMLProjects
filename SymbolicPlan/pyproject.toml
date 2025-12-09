@@ -1,0 +1,46 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "SymbolicPlan"
+version = "0.1.0"
+description = "LLM-based symbolic planner for robot task execution"
+readme = "README.md"
+requires-python = ">=3.9"
+authors = [
+    {name = "Kevin Jin"},
+]
+
+dependencies = [
+    # --- LLM Clients ---
+    "anthropic>=0.19.0",       # Anthropic Claude API
+    "ollama>=0.1.0",           # Local Ollama client
+
+    # --- Utils ---
+    "pydantic>=2.0.0",         # optional, helpful for structured objects if you want
+    "python-dotenv>=1.0.0",    # load API keys
+    "dataclasses-json>=0.6.0", # if you serialize state or logs
+    "typer>=0.9.0",            # optional, CLI entrypoints for demo/debug
+
+    # --- Development ---
+    "rich>=13.0.0",            # nicer logging/debug prints (optional)
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=7.0.0",
+    "black>=23.0",
+    "ruff>=0.1.0"
+]
+
+[tool.setuptools.packages.find]
+exclude = ["tests", "docs"]
+
+[tool.black]
+line-length = 100
+target-version = ["py39"]
+
+[tool.ruff]
+line-length = 100
+select = ["E", "F", "I"]

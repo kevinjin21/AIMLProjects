@@ -1,0 +1,59 @@
+{
+  "scenario": "Multi Object Episode 1",
+  "task_description": "Put the book on the shelf and the box on the floor.",
+  "initial_state": "Robot is at table.\nRobot's hand is empty.\nbox is on table.\nbook is on table.\nGoal: Put the book on the shelf and the box on the floor.\nSteps taken: 0/15",
+  "success": true,
+  "total_steps": 6,
+  "final_state": "Robot is at table.\nRobot's hand is empty.\nbox is on floor.\nbook is on shelf.\nGoal: Put the book on the shelf and the box on the floor.\nSteps taken: 6/15",
+  "steps": [
+    {
+      "step_number": 1,
+      "action": "PICK(BOOK)",
+      "llm_raw_output": "ACTION: PICK(book)",
+      "result": "Picked up book",
+      "state_after": "Robot is at table.\nRobot is holding book.\nbox is on table.\nGoal: Put the book on the shelf and the box on the floor.\nSteps taken: 1/15",
+      "step_count": 1
+    },
+    {
+      "step_number": 2,
+      "action": "MOVE_TO(SHELF)",
+      "llm_raw_output": "ACTION: MOVE_TO(shelf)",
+      "result": "Moved to shelf",
+      "state_after": "Robot is at shelf.\nRobot is holding book.\nbox is on table.\nGoal: Put the book on the shelf and the box on the floor.\nSteps taken: 2/15",
+      "step_count": 2
+    },
+    {
+      "step_number": 3,
+      "action": "PLACE(SHELF)",
+      "llm_raw_output": "ACTION: PLACE(shelf)",
+      "result": "Placed book on shelf",
+      "state_after": "Robot is at shelf.\nRobot's hand is empty.\nbox is on table.\nbook is on shelf.\nGoal: Put the book on the shelf and the box on the floor.\nSteps taken: 3/15",
+      "step_count": 3
+    },
+    {
+      "step_number": 4,
+      "action": "MOVE_TO(TABLE)",
+      "llm_raw_output": "ACTION: MOVE_TO(table)",
+      "result": "Moved to table",
+      "state_after": "Robot is at table.\nRobot's hand is empty.\nbox is on table.\nbook is on shelf.\nGoal: Put the book on the shelf and the box on the floor.\nSteps taken: 4/15",
+      "step_count": 4
+    },
+    {
+      "step_number": 5,
+      "action": "PICK(BOX)",
+      "llm_raw_output": "ACTION: PICK(box)",
+      "result": "Picked up box",
+      "state_after": "Robot is at table.\nRobot is holding box.\nbook is on shelf.\nGoal: Put the book on the shelf and the box on the floor.\nSteps taken: 5/15",
+      "step_count": 5
+    },
+    {
+      "step_number": 6,
+      "action": "PLACE(FLOOR)",
+      "llm_raw_output": "ACTION: PLACE(floor)",
+      "result": "Placed box on floor",
+      "state_after": "Robot is at table.\nRobot's hand is empty.\nbox is on floor.\nbook is on shelf.\nGoal: Put the book on the shelf and the box on the floor.\nSteps taken: 6/15",
+      "step_count": 6
+    }
+  ],
+  "timestamp": "2025-12-09T11:56:15.827031"
+}

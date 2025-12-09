@@ -1,0 +1,19 @@
+{
+  "scenario": "Container Task Episode 1",
+  "task_description": "Open the box at the table.",
+  "initial_state": "Robot is at table.\nRobot's hand is empty.\nbox is on table.\nGoal: Open the box at the table.\nSteps taken: 0/8",
+  "success": true,
+  "total_steps": 1,
+  "final_state": "Robot is at table.\nRobot's hand is empty.\nbox is on table.\nGoal: Open the box at the table.\nSteps taken: 0/8",
+  "steps": [
+    {
+      "step_number": 1,
+      "action": "NONE",
+      "llm_raw_output": "",
+      "result": "Task already completed",
+      "state_after": "Robot is at table.\nRobot's hand is empty.\nbox is on table.\nGoal: Open the box at the table.\nSteps taken: 0/8",
+      "step_count": 0
+    }
+  ],
+  "timestamp": "2025-12-09T11:55:03.954378"
+}

@@ -1,0 +1,13 @@
+# IDE
+.vscode
+__pycache__
+
+# Secrets
+.env
+
+# Logs (but keep the README)
+logs
+
+# Environment
+.venv
+*.egg-info

@@ -52,6 +52,9 @@ Floor → Table → Shelf
   • Avg Steps:        4.0
   • Avg Steps (Suc):  4.0
 ```
+<div align="center">
+    <img src="graphics/sankey-pick_and_place.png" width="800"/>
+</div>
 
 ---
 
@@ -151,6 +154,9 @@ Table → Shelf → Table → Floor
   • Avg Steps:        10.0
   • Avg Steps (Suc):  8.75
 ```
+<div align="center">
+    <img src="graphics/sankey-multi_object.png" width="800"/>
+</div>
 
 ---
 

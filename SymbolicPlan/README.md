@@ -152,6 +152,10 @@ Avg Steps (Success):4.00
 - **Average Steps:** 10.0 overall, 8.75 for successful episodes
 - **Optimal Steps:** ~6 steps (varies by strategy)
 
+<div align="center">
+    <img src="graphics/sankey-multi_object.png" width="800"/>
+</div>
+
 The system demonstrates robust planning across diverse scenarios with high success rates. See `EVALUATION.md` for detailed analysis of all test scenarios including pick-and-place (100% success) and container manipulation (100% success).
 
 ---
